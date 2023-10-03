@@ -21,7 +21,7 @@ namespace IXLA_SDK
     /// <summary>
     /// Summary description for WebService1
     /// </summary>
-    [WebService(Namespace = "Polaris-IXLA")]
+    [WebService(Namespace = "Polaris-IXLA-spicalOffice")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -89,10 +89,10 @@ namespace IXLA_SDK
         //  MarkLayout method
 
 
-
+        // here we dont have mother name it replaced with occupation 
         [WebMethod]
         public string MarkLayout(string Ip, int Port,string SerialNumber, string Type, string Country, string Passport, string Name1EN
-        , string DateOfBirth, string Name2AR, string Surname1EN, string Surname1AR, string MatherNameEN, string MatherNameAR,
+        , string DateOfBirth, string Name2AR, string Surname1EN, string Surname1AR, string OccupationEN, string OccupationAR,
             string Sex, string PlaceOfBirth, string PlaceOfBirthArabic, string Nationality,
             string dateOfIssue, string DateOfExpiry, string Signature, string AuthorityPlaceEN, string MRZ1,
             string MRZ2, string Photo)
@@ -215,8 +215,8 @@ namespace IXLA_SDK
                           new UpdateTextEntity("Name2_AR", Name2AR),
                           new UpdateTextEntity("Surname", Surname1EN),
                           new UpdateTextEntity("Surname1_AR", Surname1AR),
-                          new UpdateTextEntity("Mather Name_EN", MatherNameEN),
-                          new UpdateTextEntity("Mather Name_AR",MatherNameAR),
+                          new UpdateTextEntity("Mather Name_EN", OccupationEN),// we use Occupation insted of mother name in spical office just
+                          new UpdateTextEntity("Mather Name_AR",OccupationAR),//  we use Occupation insted of mother name in spical office just
                           new UpdateTextEntity("Sex", Sex),
 
                           new UpdateTextEntity("Date of Birth", DateOfBirth),
